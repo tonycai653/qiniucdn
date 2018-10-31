@@ -103,7 +103,7 @@ func (lsize LogSize) String() (ret string) {
 	return
 }
 
-var reg = regexp.MustCompile(`(?P<ClientIp>\d+\.\d+\.\d+\.\d+)\s+(?P<Hit>(HIT|MISS|-))\s+(?P<RespTime>\d+)\s+(?P<ReqTime>\[.+\])\s+"(?P<Method>GET|HEAD|POST|OPTIONS)\s+(?P<Url>.+)\s+HTTP(s)?/(1.0|1.1|2.0)"\s+(?P<RespCode>\d+)\s+(?P<RespSize>\d+)\s+(?P<Referer>".*")\s+(?P<UserAgent>".*")\s*$`)
+var reg = regexp.MustCompile(`(?P<ClientIp>\d+\.\d+\.\d+\.\d+)\s+(?P<Hit>(HIT|MISS|UNKNOWN|-))\s+(?P<RespTime>\d+)\s+(?P<ReqTime>\[.+\])\s+"(?P<Method>GET|HEAD|POST|OPTIONS)\s+(?P<Url>.+)\s+HTTP(s)?/(1.0|1.1|2.0)"\s+(?P<RespCode>\d+)\s+(?P<RespSize>\d+)\s+(?P<Referer>".*")\s+(?P<UserAgent>".*")\s*$`)
 
 var names = reg.SubexpNames()
 
